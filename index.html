@@ -1320,7 +1320,7 @@ function isDateOpen(d){
   const now=new Date();
   const eventDay=new Date(d+'T00:00:00');
   const openAt=new Date(eventDay.getTime()-(7*24*60*60*1000));
-  openAt.setHours(8,0,0,0);
+  openAt.setHours(15,0,0,0);
   const closeAt=new Date(d+'T22:45:00');
   // force-close always wins at 22:45 event day
   if(now>=closeAt){ 
@@ -1375,7 +1375,7 @@ function getDateStatus(d){
   const now=new Date();
   const eventDay=new Date(d+'T00:00:00');
   const openAt=new Date(eventDay.getTime()-(7*24*60*60*1000));
-  openAt.setHours(8,0,0,0);
+  openAt.setHours(15,0,0,0);
   const closeAt=new Date(d+'T22:45:00');
   if(now>=closeAt) return 'chiusa-auto';
   if(closedDates.includes(d)) return 'chiusa-manuale';
